@@ -1,0 +1,225 @@
+/*Corrects positioning of Bkg*/
+*{
+	margin:0;
+	padding:0;
+}
+
+/*Backgrounds*/
+.bkg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+body{
+  animation: animate 1.25s infinite;
+}
+
+@keyframes animate{
+    0%{
+        cursor: url('./images/cursor.png'), default;
+    }   
+    50%{
+        cursor: url('./images/cursor2.png'), default;
+    }
+    100%{
+        cursor: url('./images/cursor.png'), default;
+      }
+    }
+
+/*Paragraphs*/
+p {
+  color: white;
+  font-family: "Minion Variable Concept";
+  font-weight: bold;
+}
+
+/*Headers 1*/
+h1 {
+  color: white;
+  font-family: "Monotype Corsiva";
+}
+
+/*Headers 2*/
+h2 {
+  color: white;
+  font-family: "Monotype Corsiva";
+}
+
+/*Removes underline from link elements*/
+a { 
+	text-decoration: none;
+}
+
+/*Images Hover Behaviour*/
+.container{
+  position:absolute; 
+  transform:translate(-50%,-50%); 
+}
+
+.image-hover{
+  display:block;
+  width: 100%;
+  border-radius: 15px; 
+}
+
+.image-overlay{
+  /*Font Specifics*/
+  font-size:35px;
+  text-shadow: 
+    1px 1px 5px #ED0C6D,
+    0 0 1em #ED0C6D,
+    0 0 0.2em #ED0C6D;
+  /*Positioning*/
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  background: rgba(247, 110, 169, 0.2); /*Bkg for Blur Opacity*/
+  /*Original Behaviour*/
+  opacity:0;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.image-overlay--blur {
+  backdrop-filter: blur(2px); /*Blur Intensity*/
+  border-radius: 15px;
+}
+
+.image-overlay:hover{
+  opacity:1;
+}
+
+/*Class box for general bkg boxes*/
+.box{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  border-radius: 15px;
+  background-color: rgba(243, 243, 244, 0.8);
+}
+
+/*Static boxes to contain table elements*/
+.box-static{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  border-radius: 15px;
+  /*background-color: rgba(243, 243, 244, 0.8); /*4 debug, remove for transparency*/
+}
+
+
+/*Boxes that can be navigated vertically.*/
+.box-scroll{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  border-radius: 15px;
+  /*background-color: rgba(243, 243, 244, 0.8); /*4 debug, remove for transparency*/
+  overflow: hidden;
+  overflow-y:scroll;
+  scrollbar-color: black grey;
+}
+
+
+/*General Table preferences*/
+.row-prefs{
+  display: block;
+  margin: 20px;
+
+}
+
+table {
+  border-spacing: 20px 0;
+}
+
+/*Preferences for storyboards tables*/
+.td-limit {
+  background-color: rgb(0,0,0, 0.8);
+  border: 3px black solid;
+  border-radius: 15px;
+  padding:20px;
+}
+
+.table-img{
+  text-align: center; 
+  width: 310px;
+}
+
+/*Preferences for 2D/3D/Animation Menu Images*/
+.menu-img{
+  width: 300px;
+  position:absolute;
+  transform:translate(-50%,-50%);
+  top:50%;
+  left:50%;
+
+}
+
+.menu-box{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  width:350px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.6) /*rgba(0, 0, 0, 0.5);*/
+
+}
+
+/* Image Expansions in WHO AM I page */
+.exp-ig{
+        width: 35px; 
+        position:absolute; 
+        top:50%; 
+        left:20%; 
+        transform:translate(-50%,-50%);
+      }
+.exp-ig:hover {
+      width:40px;
+  }
+
+.exp-tmblr{
+    width:90px; 
+    position:absolute; 
+    top:50%; 
+    left:62%; 
+    transform:translate(-50%,-50%);
+  }
+.exp-tmblr:hover {
+      width:95px;
+  }
+
+/* Paragraph Expansion in MAIN page - Who is Halluprism?*/
+.p-hover{
+      font-size: 17px; 
+      position:absolute; 
+      text-align:left; 
+      margin-left:10px; 
+      margin-top:10px
+    }
+
+.p-hover:hover{
+    font-size:18px;
+    margin-left:5px; 
+    margin-top:10px;
+  }
+
+/* Paragraph Expansion in STORYBOARDS page - See More*/
+.p-hover-button{
+  position: absolute;
+  color:black; 
+  text-align:center; 
+  font-size: 17px; 
+  background-color: white; 
+  border-radius:3px; 
+  width: 75px; 
+  height:auto;
+}
+
+.p-hover-button:hover {
+  transform: scale(1.05);
+
+}
